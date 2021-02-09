@@ -44,9 +44,7 @@ public class NettyConnectionResetByPeerTest {
             ).get();
         } catch (ExecutionException e) {
             Throwable ex = e.getCause();
-            assertThat(ex, is(not(instanceOf(TimeoutException.class))));
             assertThat(ex, is(instanceOf(IOException.class)));
-//            assertTrue(ex.getMessage().equalsIgnoreCase("Connection reset by peer"));
         }
     }
 
